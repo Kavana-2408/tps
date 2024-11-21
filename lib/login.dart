@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tps/doctorprofile.dart';
+import 'package:tps/signup.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -9,7 +11,10 @@ class LoginScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF4682B4), Color(0xFF87CEEB)],
+            colors: [
+              Color.fromARGB(255, 5, 60, 106),
+              Color.fromARGB(255, 77, 145, 172)
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -57,7 +62,11 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DoctorProfileScreen()),
+                    );},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF1E3A8A),
                     minimumSize: const Size(double.infinity, 50),
@@ -72,14 +81,22 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                   child: const Text(
                     'Forgot Password',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => const SignUpPage()),
+);
+
+                  },
                   child: const Text(
                     'Create an Account',
                     style: TextStyle(color: Colors.white),
